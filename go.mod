@@ -1,3 +1,3 @@
-module github.com/Viktor_Fjuk/funtemps
+module github.com/ViktorFjuk/funtemps
 
 go 1.19
