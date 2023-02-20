@@ -14,23 +14,71 @@ import (
 	kan du bruke malen som den er (du må selvsagt endre
 	funksjonsnavn og testverdier)
 */
-func TestFarhenheitToCelsius(t *testing.T) {
+func TestFahrenheitToCelsius(t *testing.T) {
 	type test struct {
 		input float64
 		want  float64
 	}
 
 	tests := []test{
-		{input: 134, want: 56.67},
+		{input: 100, want: 37.77777777777778},
 	}
 
 	for _, tc := range tests {
-		got := FarhenheitToCelsius(tc.input)
+		got := FahrenheitToCelsius(tc.input)
 		if !reflect.DeepEqual(tc.want, got) {
 			t.Errorf("expected: %v, got: %v", tc.want, got)
 		}
 	}
 }
 
-// De andre testfunksjonene implementeres her
-// ...
+func TestFahrenheitToKelvin(t *testing.T) {
+
+	type test struct {
+		input float64
+		want  float64
+	}
+
+	tests := []test{
+		{input: 90, want: 305.37222222222226},
+	}
+
+	for _, tc := range tests {
+		got := FahrenheitToKelvin(tc.input)
+		if !reflect.DeepEqual(tc.want, got) {
+			t.Errorf("expected: %v, got: %v", tc.want, got)
+		}
+	}
+
+}
+
+func TestCelsiusToFahrenheit(t *testing.T) {
+
+	type test struct {
+		input float64
+		want  float64
+	}
+
+	tests := []test{
+		{input: 25, want: 77},
+	}
+
+	for _, tc := range tests {
+		got := CelsiusToFahrenheit(tc.input)
+		if !reflect.DeepEqual(tc.want, got) {
+			t.Errorf("expected: %v, got: %v", tc.want, got)
+		}
+	}
+
+}
+
+func TestCelsiusToKelvin(t *testing.T) {
+
+}
+
+func TestKelvinToFahrenheit(t *testing.T) {
+}
+
+func TestKelvinToCelsius(t *testing.T) {
+
+}

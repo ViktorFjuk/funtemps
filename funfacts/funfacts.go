@@ -1,4 +1,8 @@
-package funfucts
+package funfacts
+
+func GetFunFacts() {
+
+}
 
 /**
   Implementer funfacts-funksjon:
