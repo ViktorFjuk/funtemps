@@ -17,17 +17,12 @@ func init() {
 
 func main() {
 
-	fahrptr := flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")
-	celptr := flag.Float64Var(&cel, "C", 0.0, "temperatur i grader celsius")
-	kelptr := flag.Float64Var(&kel, "K", 0.0, "temperatur i grader kelvin")
-	outptr := flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F - farhenheit, K- Kelvin")
+	flag.Float64Var(&fahr, "F", 0.0, "temperatur i grader fahrenheit")
+	flag.Float64Var(&cel, "C", 0.0, "temperatur i grader celsius")
+	flag.Float64Var(&kel, "K", 0.0, "temperatur i grader kelvin")
+	flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F - farhenheit, K- Kelvin")
 
 	flag.Parse()
-
-	celsius := celptr
-	fahrenheit := fahrptr
-	kelvin := kelptr
-	out := outptr
 
 	if *celsius != 0 {
 		fmt.Printf("%.2fC = %.2fF = %.2fK\n", *celsius, conv.CelsiusToFahrenheit(*celsius), conv.CelsiusToKelvin(*celsius))
