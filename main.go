@@ -1,7 +1,7 @@
 package main
 
 import (
-	flag "flag"
+	"flag"
 	"fmt"
 	"github.com/ViktorFjuk/funtemps/conv"
 )
@@ -24,12 +24,12 @@ func main() {
 
 	flag.Parse()
 
-	if *celsius != 0 {
-		fmt.Printf("%.2fC = %.2fF = %.2fK\n", *celsius, conv.CelsiusToFahrenheit(*celsius), conv.CelsiusToKelvin(*celsius))
-	} else if *fahrenheit != 0 {
-		fmt.Printf("%.2fF = %.2fC = %.2fK\n", *fahrenheit, conv.FahrenheitToCelsius(*fahrenheit), conv.FahrenheitToKelvin(*fahrenheit))
-	} else if *kelvin != 0 {
-		fmt.Printf("%.2fK = %.2fC = %.2fF\n", *kelvin, conv.KelvinToCelsius(*kelvin), conv.KelvinToFahrenheit(*kelvin))
+	if cel != 0 {
+		fmt.Printf("%.2fC = %.2fF = %.2fK\n", cel, conv.CelsiusToFahrenheit(cel), conv.CelsiusToKelvin(cel))
+	} else if fahr != 0 {
+		fmt.Printf("%.2fF = %.2fC = %.2fK\n", fahr, conv.FahrenheitToCelsius(fahr), conv.FahrenheitToKelvin(fahr))
+	} else if kel != 0 {
+		fmt.Printf("%.2fK = %.2fC = %.2fF\n", kel, conv.KelvinToCelsius(kel), conv.KelvinToFahrenheit(kel))
 	} else {
 		fmt.Println("Please specify a temperature to convert")
 	}
