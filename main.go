@@ -20,22 +20,34 @@ func main() {
 
 	flag.Parse()
 
-	if cel != 0 && fahr == 0 {
-		fmt.Printf("%.2fC = %.2fF\n", cel, conv.CelsiusToFahrenheit(cel))
+	if cel != 0 {
+		if out == "F" {
+			fmt.Printf("%.2fC er %.2fF\n", cel, conv.CelsiusToFahrenheit(cel))
+		} else if out == "K" {
+			fmt.Printf("%.2fC er %.2fK\n", cel, conv.CelsiusToKelvin(cel))
+		} else {
+			fmt.Printf("%.2fC er %.2fC\n", cel, cel)
+		}
+	}
 
-	} else if cel != 0 && kel == 0 {
-		fmt.Printf("%.2fC = %.2fK\n", cel, conv.CelsiusToKelvin(cel))
+	if fahr != 0 {
+		if out == "C" {
+			fmt.Printf("%.2fF er %.2fC\n", fahr, conv.FahrenheitToCelsius(fahr))
+		} else if out == "K" {
+			fmt.Printf("%.2fF er %.2fK\n", fahr, conv.FahrenheitToKelvin(fahr))
+		} else {
+			fmt.Printf("%.2fF er %.2fF\n", fahr, fahr)
+		}
+	}
 
-	} else if fahr != 0 && cel == 0 {
-		fmt.Printf("%.2fF = %.2fC\n", fahr, conv.FahrenheitToCelsius(fahr))
-	} else if fahr != 0 && kel == 0 {
-		fmt.Printf("%.2fF = %.2fK\n", fahr, conv.FahrenheitToKelvin(fahr))
-	} else if kel != 0 && cel == 0 {
-		fmt.Printf("%.2fK = %.2fC\n", kel, conv.KelvinToCelsius(kel))
-	} else if kel != 0 && fahr == 0 {
-		fmt.Printf("%.2fK = %.2fF\n", kel, conv.KelvinToFahrenheit(kel))
-	} else {
-		fmt.Println("Please specify only one temperature to convert")
+	if kel != 0 {
+		if out == "C" {
+			fmt.Printf("%.2fK er %.2fC\n", kel, conv.KelvinToCelsius(kel))
+		} else if out == "F" {
+			fmt.Printf("%.2fK er %.2fF\n", kel, conv.KelvinToFahrenheit(kel))
+		} else {
+			fmt.Printf("%.2fK er %.2fK\n", kel, kel)
+		}
 	}
 
 }
